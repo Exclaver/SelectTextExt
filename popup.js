@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   const screenshotButton = document.getElementById("screenshotButton");
-  // heyhelloo
   screenshotButton.addEventListener("click", function () {
     chrome.runtime.sendMessage(
       { action: "takeScreenshot" },
@@ -58,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch((error) => {
               console.error(error);
-              print("hey");
             });
         }
       }
