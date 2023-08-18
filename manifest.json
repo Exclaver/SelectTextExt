@@ -1,0 +1,30 @@
+{
+    "name":"dev extention",
+    "version":"1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "activeTab",
+        "*://*/*"
+      ],
+      "background": {
+        "service_worker": "background.js"
+      },
+      "action": {
+        "default_popup": "popup.html"
+      },
+      "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'",
+        "sandbox": "sandbox allow-scripts; script-src 'self' https://unpkg.com/;"
+      },
+      "host_permissions": [
+        "https://api.ocr.space/"
+      ],
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>","https://*.youtube.com/*",
+            "https://*.google.com/*",
+            "https://*.microsoft.com/*"],
+            "js": ["content.js"]
+        }
+    ]
+}
